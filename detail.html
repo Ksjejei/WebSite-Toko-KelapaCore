@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Detail Produk</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container py-5">
+    <a href="index.html" class="btn btn-secondary mb-3">← Kembali</a>
+
+    <div class="row">
+      <div class="col-md-6">
+        <img id="detailImg" src="img/produk 3.jpg" style="width:700px;height:600px;">
+
+        <!-- 🔥 BIODATA PRODUK DI BAWAH GAMBAR -->
+        <div class="mt-4 p-3 border rounded">
+          <h3 class="fw-bold mb-3">Biodata Produk</h3>
+
+          <ul class="list-group">
+            <li class="list-group-item"><strong>MSI GeForce RTX 5090 GAMING TRIO OC 32GB GDDR7</strong> <span id="bioName"></span></li>
+            <li class="list-group-item"><strong>Harga: Rp 54.780.000</strong> <span id="bioPrice"></span></li>
+            <li class="list-group-item"><strong>Spesifikasi: <br>Spesifikasi Teknis Utama
+<br>Fitur 	Spesifikasi<br>
+
+<br>Unit Pemrosesan Grafis (GPU) :NVIDIA® GeForce RTX™ 5090
+
+<br>Antarmuka	PCI Express® Gen 5
+
+<br>CUDA® Cores	21.760 Unit
+
+<br>Kecepatan Core	Extreme Performance: 2497 MHz (via MSI Center)
+
+<br>Boost: 2482 MHz (Mode Gaming & Silent)<br>
+
+<br>Kecepatan Memori	28 Gbps
+
+<br>Memori	32 GB GDDR7
+
+<br>Antarmuka Memori (Memory Bus)	512-bit<br>
+
+<br>Resolusi Digital Maksimum	7680 x 4320 piksel
+
+<br>Dukungan Multi-display	4 output display
+
+<br>Konektivitas dan Dimensi
+
+<br>Output Video: 3x DisplayPort 2.1b, 1x HDMI 2.1b (mendukung 4K @480Hz atau 8K @120Hz dengan DSC)
+
+<br>Dukungan HDCP: Ya<br>
+
+<br>Dukungan API: DirectX 12 Ultimate, OpenGL 4.6
+
+<br>Dimensi Kartu: 359 x 149 x 70 mm
+
+<br>Berat (Kartu/Paket): 2119 g / 2735 g 
+
+<br>Kebutuhan Daya dan Fitur Termal
+
+<br>Konsumsi Daya (TDP): 575 W
+
+<br>Konektor Daya: 1x konektor 16-pin (disarankan PSU ATX 3.1)
+
+<br>PSU Rekomendasi: 1000 W<br>
+
+<br>Desain Termal: TRI FROZR 4 (tiga kipas Stormforce yang ditingkatkan, kontrol aliran udara, pelat dasar tembaga berlapis nikel, backplate logam yang diperkuat)
+
+<br>Fitur Tambahan: Dual BIOS (mode Gaming atau Silent), teknologi G-SYNC® dari NVIDIA 
+
+
+
+</strong> <span id="bioDesc"></span></li>
+            <li class="list-group-item"><strong>Stok: 99+</strong> <span id="bioStock"></span></li>
+          </ul>
+        </div>
+        <!-- END BIODATA -->
+      </div>
+
+      <!-- DETAIL DI KANAN -->
+      <div class="col-md-6">
+        <h2 id="detailName"></h2>
+        <h4 id="detailPrice" class="text-primary fw-bold"></h4>
+        <p id="detailDesc"></p>
+
+        <div class="d-flex gap-2">
+          <button id="addDetailCart" class="btn btn-primary">Tambah ke Keranjang</button>
+          <a href="checkout.html" class="btn btn-success">Checkout Sekarang</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id') || '1';
+    const p = products[id];
+
+    if (!p) {
+      document.getElementById('detailName').textContent = 'Produk tidak ditemukan';
+    } else {
+      // bagian kanan
+      document.getElementById('detailImg').src = p.img;
+      document.getElementById('detailName').textContent = p.name;
+      document.getElementById('detailPrice').textContent = formatRupiah(p.price);
+      document.getElementById('detailDesc').textContent = p.desc;
+
+      // BIODATA (di bawah gambar)
+      document.getElementById('bioName').textContent = p.name;
+      document.getElementById('bioPrice').textContent = formatRupiah(p.price);
+      document.getElementById('bioDesc').textContent = p.desc;
+      document.getElementById('bioCategory').textContent = p.category || "Tidak ada";
+      document.getElementById('bioStock').textContent = p.stock || "Tidak tersedia";
+
+      // tombol tambah ke keranjang
+      document.getElementById('addDetailCart').addEventListener('click', () => {
+        addToCart(id);
+        alert('Produk ditambahkan ke keranjang');
+      });
+    }
+  </script>
+</body>
+</html>

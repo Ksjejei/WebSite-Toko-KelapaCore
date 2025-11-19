@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KelapaCore — Beranda</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">KelapaCore</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#produk">Produk</a></li>
+        </ul>
+
+        <!-- Search di navbar -->
+        <form class="d-flex me-3" onsubmit="return false">
+          <input id="navSearch" class="form-control me-2" type="search" placeholder="Cari produk..." aria-label="Cari">
+        </form>
+
+        <!-- Cart toggle -->
+        <button id="openCartBtn" class="btn btn-success me-2">
+          Keranjang <span id="cartCount" class="badge bg-dark ms-1">0</span>
+        </button>
+
+      
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="header-hero text-center text-white">
+    <div class="container py-5">
+      <h1 class="fw-bold">Selamat Datang di KelapaCore</h1>
+      <p class="lead">Belanja Mudah, Aman, dan Terpercaya</p>
+      <p class="lead">Ayo tunggu apalagi!!</p>
+    </div>
+  </header>
+
+  <!-- SEARCH BAR di atas produk -->
+  <section class="container my-4">
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <input id="topSearch" class="form-control" type="text" placeholder="Cari produk di sini...">
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUK (12 item) -->
+  <section id="produk" class="container py-3">
+    <h2 class="text-center mb-4">Produk Terbaru</h2>
+
+    <div class="row g-4" id="productList">
+      <!-- Produk akan didefinisikan statis di HTML agar lebih mudah (12 produk) -->
+      <!-- 1 -->
+      <div class="col-md-4 product" data-id="1" data-name="Hyte Y70 Touch Infinite Panda Modern Aesthetic Dual Chamber Atx Case">
+        <div class="card product-card">
+          <img src="img/Produk 1.jpg" class="card-img-top" alt="Hyte Y70 Touch Infinite Panda Modern Aesthetic Dual Chamber Atx Case">
+          <div class="card-body text-center">
+            <h5 class="card-title">Hyte Y70 Touch Infinite Panda Modern Aesthetic Dual Chamber Atx Case</h5>
+            <p class="harga">Rp 6.540.000</p>
+            <div class="d-grid gap-2">
+              <a href="detail.html?id=1" class="btn btn-outline-primary">Detail</a>
+              <button onclick="addToCartFromPage(1)" class="btn btn-primary">Tambah ke Keranjang</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="col-md-4 product" data-id="2" data-name="ASUS VGA GEFORCE ROG STRIX RTX4090 O24G EVA 02 EDITION">
+        <div class="card product-card">
+          <img src="img/Produk 2.jpg" class="card-img-top" alt="ASUS VGA GEFORCE ROG STRIX RTX4090 O24G EVA 02 EDITION">
+          <div class="card-body text-center">
+            <h5 class="card-title">ASUS VGA GEFORCE ROG STRIX RTX4090 O24G EVA 02 EDITION</h5>
+            <p class="harga">Rp 42.990.000</p>
+            <div class="d-grid gap-2">
+              <a href="detail.html?id=2" class="btn btn-outline-primary">Detail</a>
+              <button onclick="addToCartFromPage(2)" class="btn btn-primary">Tambah ke Keranjang</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="col-md-4 product" data-id="3" data-name="MSI GeForce RTX 5090 GAMING TRIO OC 32GB GDDR7">
+        <div class="card product-card">
+          <img src="img/Produk 3.jpg" class="card-img-top" alt="MSI GeForce RTX 5090 GAMING TRIO OC 32GB GDDR7">
+          <div class="card-body text-center">
+            <h5 class="card-title">MSI GeForce RTX 5090 GAMING TRIO OC 32GB GDDR7</h5>
+            <p class="harga">Rp 54.780.000</p>
+            <div class="d-grid gap-2">
+              <a href="detail.html?id=3" class="btn btn-outline-primary">Detail</a>
+              <button onclick="addToCartFromPage(3)" class="btn btn-primary">Tambah ke Keranjang</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="col-md-4 product" data-id="4" data-name="Motherboad ASUS ROG MAXIMUS Z790 HERO EVA-02 EDISI">
+        <div class="card product-card">
+          <img src="img/produk4.jpg" class="card-img-top" alt="Motherboad ASUS ROG MAXIMUS Z790 HERO EVA-02 EDISI">
+          <div class="card-body text-center">
+            <h5 class="card-title">Motherboad ASUS ROG MAXIMUS Z790 HERO EVA-02 EDISI</h5>
+            <p class="harga">Rp 12.990.000</p>
+            <div class="d-grid gap-2">
+              <a href="detail.html?id=4" class="btn btn-outline-primary">Detail</a>
+              <button onclick="addToCartFromPage(4)" class="btn btn-primary">Tambah ke Keranjang</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="col-md-4 product" data-id="5" data-name="Gigabyte X870 Aorus Elite Wifi7 Ddr5 Amd Am5 Motherboard">
+        <div class="card product-card">
+          <img src="img/produk5.jpg" class="card-img-top" alt="Gigabyte X870 Aorus Elite Wifi7 Ddr5 Amd Am5 Motherboard">
+          <div class="card-body text-center">
+            <h5 class="card-title">Gigabyte X870 Aorus Elite Wifi7 Ddr5 Amd Am5 Motherboard</h5>
+            <p class="harga">Rp 6.340.000</p>
+            <div class="d-grid gap-2">
+              <a href="detail.html?id=5" class="btn btn-outline-primary">Detail</a>
+              <button onclick="addToCartFromPage(5)" class="btn btn-primary">Tambah ke Keranjang</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="col-md-4 product" data-id="6" data-name="Intel Core I9 14900k | Processor Box Lga1700 | I9-14900k - 14th Gen">
+        <div class="card product-card">
+          <img src="img/produk6.jpg" class="card-img-top" alt="Intel Core I9 14900k | Processor Box Lga1700 | I9-14900k - 14th Gen">
+          <div class="card-body text-center">
+            <h5 class="card-title">Intel Core I9 14900k | Processor Box Lga1700 | I9-14900k - 14th Gen</h5>
+            <p class="harga">Rp 8.250.000</p>
+            <div class="d-grid gap-2">
+              <a href="detail.html?id=6" class="btn btn-outline-primary">Detail</a>
+              <button onclick="addToCartFromPage(6)" class="btn btn-primary">Tambah ke Keranjang</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="col-md-4 product" data-id="7" data-name="AMD Ryzen 7 7800X3D R7 7800X3D 5.0 GHz 8-Core 16-Thread CPU Processor">
+        <div class="card product-card">
+          <img src="img/produk7.jpg" class="card-img-top" alt="AMD Ryzen 7 7800X3D R7 7800X3D 5.0 GHz 8-Core 16-Thread CPU Processor">
+          <div class="card-body text-center">
+            <h5 class="card-title">AMD Ryzen 7 7800X3D R7 7800X3D 5.0 GHz 8-Core 16-Thread CPU Processor</h5>
+            <p class="harga">Rp 5.780.000</p>
+            <div class="d-grid gap-2">
+              <a href="detail.html?id=7" class="btn btn-outline-primary">Detail</a>
+              <button onclick="addToCartFromPage(7)" class="btn btn-primary">Tambah ke Keranjang</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="col-md-4 product" data-id="8" data-name="MEMORY ADATA XPG LANCER RGB 16GB DDR5 6000">
+        <div class="card product-card">
+          <img src="img/produk8.jpg" class="card-img-top" alt="MEMORY ADATA XPG LANCER RGB 16GB DDR5 6000">
+          <div class="card-body text-center">
+            <h5 class="card-title">MEMORY ADATA XPG LANCER RGB 16GB DDR5 6000</h5>
+            <p class="harga">Rp 2.999.000</p>
+            <div class="d-grid gap-2">
+              <a href="detail.html?id=8" class="btn btn-outline-primary">Detail</a>
+              <button onclick="addToCartFromPage(8)" class="btn btn-primary">Tambah ke Keranjang</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="col-md-4 product" data-id="9" data-name="TEAMGROUP T-Force Delta RGB DDR5 32GB Kit 2x16GB 6000MHz Ram CL38 - Hitam">
+        <div class="card product-card">
+          <img src="img/produk9.jpg" class="card-img-top" alt="TEAMGROUP T-Force Delta RGB DDR5 32GB Kit 2x16GB 6000MHz Ram CL38 - Hitam">
+          <div class="card-body text-center">
+            <h5 class="card-title">TEAMGROUP T-Force Delta RGB DDR5 32GB Kit 2x16GB 6000MHz Ram CL38 - Hitam</h5>
+            <p class="harga">Rp 3.550.000</p>
+            <div class="d-grid gap-2">
+              <a href="detail.html?id=9" class="btn btn-outline-primary">Detail</a>
+              <button onclick="addToCartFromPage(9)" class="btn btn-primary">Tambah ke Keranjang</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="col-md-4 product" data-id="10" data-name="ASUS ROG RYUJIN III 360 ARGB EVA-02 EDITION">
+        <div class="card product-card">
+          <img src="img/produk10.jpg" class="card-img-top" alt="ASUS ROG RYUJIN III 360 ARGB EVA-02 EDITION">
+          <div class="card-body text-center">
+            <h5 class="card-title">ASUS ROG RYUJIN III 360 ARGB EVA-02 EDITION</h5>
+            <p class="harga">Rp 6.390.000</p>
+            <div class="d-grid gap-2">
+              <a href="detail.html?id=10" class="btn btn-outline-primary">Detail</a>
+              <button onclick="addToCartFromPage(10)" class="btn btn-primary">Tambah ke Keranjang</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11 -->
+      <div class="col-md-4 product" data-id="11" data-name="ASUS ROG Thor 1000W Platinum II EVA Edition PowerSupply">
+        <div class="card product-card">
+          <img src="img/produk11.jpg" class="card-img-top" alt="ASUS ROG Thor 1000W Platinum II EVA Edition PowerSupply">
+          <div class="card-body text-center">
+            <h5 class="card-title">ASUS ROG Thor 1000W Platinum II EVA Edition PowerSupply</h5>
+            <p class="harga">Rp 6.100.000</p>
+            <div class="d-grid gap-2">
+              <a href="detail.html?id=11" class="btn btn-outline-primary">Detail</a>
+              <button onclick="addToCartFromPage(11)" class="btn btn-primary">Tambah ke Keranjang</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12 -->
+      <div class="col-md-4 product" data-id="12" data-name="Ssd Msi Spatium M460 Pcie 4.0 Nvme M.2 2tb Gen4x4 - Ssd 2tb Nvme">
+        <div class="card product-card">
+          <img src="img/produk12.jpg" class="card-img-top" alt="Ssd Msi Spatium M460 Pcie 4.0 Nvme M.2 2tb Gen4x4 - Ssd 2tb Nvme">
+          <div class="card-body text-center">
+            <h5 class="card-title">Ssd Msi Spatium M460 Pcie 4.0 Nvme M.2 2tb Gen4x4 - Ssd 2tb Nvme</h5>
+            <p class="harga">Rp 2.190.000</p>
+            <div class="d-grid gap-2">
+              <a href="detail.html?id=12" class="btn btn-outline-primary">Detail</a>
+              <button onclick="addToCartFromPage(12)" class="btn btn-primary">Tambah ke Keranjang</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer text-center py-3">
+    <small>&copy; 2025 KelapaCore</small>
+  </footer>
+
+  <!-- SIDE CART (sidebar) -->
+  <div id="cartSidebar" class="cart-sidebar">
+    <div class="cart-header d-flex justify-content-between align-items-center p-3">
+      <h5 class="mb-0">Keranjang</h5>
+      <button id="closeCartBtn" class="btn btn-sm btn-outline-secondary">Tutup</button>
+    </div>
+    <div id="cartContent" class="cart-content p-3">
+      <!-- items rendered by JS -->
+    </div>
+    <div class="cart-footer p-3 border-top">
+      <div class="d-flex justify-content-between mb-2">
+        <strong>Total:</strong>
+        <strong id="cartTotal">Rp 0</strong>
+      </div>
+      <div class="d-grid gap-2">
+        <a href="checkout.html" class="btn btn-success">Checkout</a>
+        <button id="clearCartBtn" class="btn btn-danger">Kosongkan Keranjang</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- overlay -->
+  <div id="cartOverlay" class="cart-overlay"></div>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
